@@ -6,7 +6,7 @@ my $home = container('home');
 
 return +{
     view => {
-        mt => +{
+        tt => +{
             path => $home->file('assets/tmpl')->stringify,
         },
     },
