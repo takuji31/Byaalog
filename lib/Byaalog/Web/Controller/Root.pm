@@ -9,6 +9,7 @@ __PACKAGE__->add_trigger(
 
 sub do_index {
     my ($class, $c, $args) = @_;
+    $c->stash->{layout} = 'article';
 }
 
 1;
