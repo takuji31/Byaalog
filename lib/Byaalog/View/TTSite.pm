@@ -3,13 +3,17 @@ use Kamui;
 use base qw/Kamui::View::TT/;
 
 sub render {
-    my $self = shift;
-    my $c = shift;
-    my $load_template = $c->{view};
-    unless($load_template){
+    my $self          = shift;
+    my $c             = shift;
+    my $load_template = $c->stash->{view};
+    unless ($load_template) {
         $c->stash->{view} = $c->guess_filename;
     }
-    $c->{load_template} = $c->stash->{layout}.'.html';
+    my $layout = $c->stash->{layout};
+    unless ( $layout ) {
+        $layout = 'default';
+    }
+    $c->{load_template} = $layout . '.html';
     $self->SUPER::render($c);
 }
 

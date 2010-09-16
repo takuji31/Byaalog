@@ -1,4 +1,5 @@
 use Byaalog::Web::Handler;
+use Byaalog::Web::Handler::Admin;
 use Byaalog::Container;
 use Plack::Builder;
 my $app = Byaalog::Web::Handler->new;
