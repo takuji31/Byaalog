@@ -1,6 +1,9 @@
 use Kamui;
 
 return +{
-    datasource => +{
-    },
+    datasource => [
+        'dbi:mysql:blog_dev;user=root',
+        '',
+        '',
+    ],
 }; 
