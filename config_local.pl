@@ -6,4 +6,8 @@ return +{
         '',
         '',
     ],
+    hostname => +{
+        default => 'http://blog.dev.senchan.jp/',
+        admin => 'http://admin.blog.dev.senchan.jp/',
+    },
 }; 
