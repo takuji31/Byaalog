@@ -1,5 +1,5 @@
 package Byaalog::Web::Controller::Admin::Root;
-use Kamui::Web::Controller -base;
+use base qw/Byaalog::Web::Controller::Admin/;
 
 __PACKAGE__->add_trigger(
     'before_dispatch' => sub {
