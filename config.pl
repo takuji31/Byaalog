@@ -14,4 +14,7 @@ return +{
     },
     plugins => +{
     },
+    setting => +{
+        title => 'SenchanBlog',
+    }
 };
