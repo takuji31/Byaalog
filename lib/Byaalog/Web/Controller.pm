@@ -1,6 +1,7 @@
 package Byaalog::Web::Controller;
 use Kamui::Web::Controller -base;
 use Byaalog::Container;
+use Byaalog::Model;
 
 __PACKAGE__->add_trigger(
     'before_dispatch' => sub {
