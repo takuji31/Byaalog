@@ -21,6 +21,14 @@ return +{
     page => +{
         root => +{
             index => 'index'
-        }
+        },
+        admin => +{
+            root => +{
+                index => 'index'
+            },
+            user => +{
+                index => 'ユーザー一覧'
+            },
+        },
     },
 };
