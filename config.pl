@@ -16,5 +16,11 @@ return +{
     },
     setting => +{
         title => 'SenchanBlog',
-    }
+        description => 'SenchanBlog',
+    },
+    page => +{
+        root => +{
+            index => 'index'
+        }
+    },
 };
