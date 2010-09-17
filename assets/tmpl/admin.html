@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[% title %] | 管理画面 | [% setting.title %]</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link  href="/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <a href="#" class="logo"><img src="/img/admin/logo.gif" width="101" height="29" alt="" /></a>
+            <ul id="top-navigation">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="/user/">ユーザー</a></li>
+                <li><a href="/user/">記事</a></li>
+                <li><a href="/user/">コメント</a></li>
+                <li><a href="/user/">トラックバック</a></li>
+                <li><a href="/user/">リンク</a></li>
+                <li><a href="/user/">ログ</a></li>
+                <li><a href="/user/">設定</a></li>
+            </ul>
+        </div>
+        <div id="middle">
+            [% INCLUDE $view %]
+        </div>
+        <div id="footer"><p>Developed by <a href="http://twitter.com/umutm">Umut Muhaddisoglu</a> 2008. Updated for HTML5/CSS3 by <a href="http://mediagearhead.com">Giles Wells</a> 2010.</p></div>
+    </div>
+</body>
+</html>
