@@ -18,7 +18,7 @@ sub get_cache_expire { 60 }
 sub get_db {
     my $db = Byaalog::DB::Main->new(
         {
-            dsn => container('conf')->{datasource},
+            dsn => container('conf')->{datasource}->[0],
             connect_options => { AutoCommit => 1 },
         }
     );
