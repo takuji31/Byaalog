@@ -1,9 +1,9 @@
 package Byaalog::Validator::Article;
-use Kamui::Web::Validator -base;
+use base qw/Senchan::FormValidator/;
 
-sub check {
+sub create {
     my $self = shift;
-    $self->{engine}->check(
+    $self->check(
         title => [qw/NOT_NULL/],
         body  => [qw/NOT_NULL/],
     );
