@@ -1,16 +1,15 @@
 package Byaalog::Web::Controller::Admin;
-use base qw/Byaalog::Web::Controller/;
+use Kamui;
 
-__PACKAGE__->add_trigger(
-    'before_dispatch' => sub {
-        my ( $class, $c ) = @_;
-        #管理画面用レイアウト
-        $c->stash->{layout} = 'admin';
-    }
-);
+sub import {
+    my $caller = caller;
+    $caller->add_trigger(
+        'before_dispatch' => sub {
+            my ( $class, $c ) = @_;
 
-sub do_index {
-    my ( $class, $c, $args ) = @_;
+            #管理画面用レイアウト
+            $c->stash->{layout} = 'admin';
+        }
+    );
 }
-
 1;
