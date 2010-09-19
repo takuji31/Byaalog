@@ -1,5 +1,6 @@
 package Byaalog::Container;
 use Kamui::Container -base;
+use Senchan::Validator;
 
 register 'validator' => sub {
     my $self = shift;
