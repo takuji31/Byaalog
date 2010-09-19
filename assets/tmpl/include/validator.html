@@ -1,0 +1,8 @@
+[% IF validator %]
+<ul class="validator">
+[%FOREACH e = validator %]
+  <li style="color:red">[% e %]</li>
+[% END %]
+</ul>
+[% END %]
+
