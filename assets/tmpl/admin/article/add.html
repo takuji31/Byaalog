@@ -2,6 +2,7 @@
             <div id="center-column">
                 <div class="top-bar">
                     <h1>記事の追加</h1>
+                    [% INCLUDE 'include/validator.html' %]
                 </div>
                 <div class="table">
                     <form id="article_add" action="" method="post">
@@ -15,7 +16,7 @@
                             </tr>
                             <tr>
                                 <td><strong>Body</strong></td>
-                                <td><textarea class="text" name="" rows="15" cols="60"></textarea></td>
+                                <td><textarea class="text" name="body" rows="15" cols="60"></textarea></td>
                             </tr>
                             <tr>
                                 <td colspan="2"><input type="submit" value="投稿" /></td>
