@@ -1,0 +1,23 @@
+[% IF pager %]
+<div class="pagination">
+  [% IF pager.current_page > 1 %]
+  <a href="[% c.uri_with(page => pager.current_page - 1) %]" class="prev_page">Prev</a>
+  [% ELSE %]
+  <span class="disabled prev_page">Prev</span>
+  [% END %]
+
+  [% FOR num IN [pager.first_page .. pager.last_page] %]
+    [% IF num == pager.current_page %]
+      <span class="current">[% num %]</span>
+    [% ELSE %]
+      <a href="[% c.uri_with(page => num) %]">[% num %]</a>
+    [% END %]
+  [% END %]
+
+  [% IF pager.current_page < pager.last_page %]
+  <a href="[% c.uri_with(page => pager.current_page + 1) %]" class="next_page">Next</a>
+  [% ELSE %]
+  <span class="disabled next_page">Next</span>
+  [% END %]
+</div>
+[% END %]
