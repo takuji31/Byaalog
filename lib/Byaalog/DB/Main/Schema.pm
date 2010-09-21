@@ -37,6 +37,8 @@ install_table user => schema {
     trigger pre_insert => \&set_rid;
 };
 
+install_utf8_columns qw/ title body /;
+
 sub set_rid {
     my ( $class, $args ) = @_;
     $args->{rid} ||= String::Random->new->randregex('[a-zA-Z0-9]{10}');
