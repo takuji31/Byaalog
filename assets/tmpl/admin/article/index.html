@@ -2,27 +2,48 @@
   <div class="content">
     <h2 class="title">Articles</h2>
     <div class="inner">
-      <form action="#" class="form">
+      <form action="/article/dispatch" class="form">
         <table class="table">
           <tr>
             <th class="first"><input type="checkbox" class="checkbox toggle" /></th>
             <th>ID</th>
-            <th>Login</th>
-            <th>Name</th>
-            <th>Surname</th>
+            <th>Title</th>
+            <th>Body</th>
             <th class="last">&nbsp;</th>
           </tr>
-          <tr class="odd">
-            <td><input type="checkbox" class="checkbox" name="id" value="1" /></td><td>1</td><td>hulk</td><td>Hulk</td><td>Hogan</td><td class="last"><a href="#">show</a> | <a href="#">edit</a> | <a href="#">destroy</a></td>
-          </tr>
-          <tr class="even">
-            <td><input type="checkbox" class="checkbox" name="id" value="1" /></td><td>2</td><td>ultimate</td><td>Ultimate</td><td>Warrior</td><td class="last"><a href="#">show</a> | <a href="#">edit</a> | <a href="#">destroy</a></td>
-          </tr>
+          [% SET i = 0 %]
+          [% WHILE (article = articles.next) %]
+            [% SET class = 'odd' %]
+            [% IF i % 2 == 1 %]
+              [% SET class = 'even' %]
+            [% END %]
+            <tr class="[% class %]">
+              <td><input type="checkbox" class="checkbox" name="id" value="[% article.id %]" /></td>
+              <td>
+                [% article.id %]
+              </td>
+              <td>
+                [% article.title %]
+              </td>
+              <td>
+                [% article.body | truncate (20,'...') %]
+              </td>
+              <td class="last">
+                <a href="[% conf.hostname.default %]archive/[% article.rid %]">show</a> | 
+                <a href="/article/edit/[% article.rid %]">edit</a> | 
+                <a href="/article/delete/[% article.rid %]">delete</a>
+              </td>
+            </tr>
+          [% SET i = i + 1 %]
+          [% END %]
         </table>
         <div class="actions-bar wat-cf">
           <div class="actions">
-            <button class="button" type="submit">
+            <button class="button" type="submit" name="delete" value="1">
               <img src="/img/admin/icons/cross.png" alt="Delete" /> Delete
+            </button>
+            <button class="button" type="submit" name="add" value="1">
+              <img src="/img/admin/icons/cross.png" alt="Add" /> Add
             </button>
           </div>
           [% INCLUDE 'include/pager.html' %]
