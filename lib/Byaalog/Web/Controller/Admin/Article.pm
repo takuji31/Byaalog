@@ -7,7 +7,8 @@ use Byaalog::Model;
 
 sub do_index {
     my ( $class, $c, $args ) = @_;
-    my $articles = model('Article')->search({});
+    my $page = $c->req->param('page') || 1;
+    my $articles = model('Article')->search({},{page => $page,rows => 1});
     if(defined $articles){
         $c->stash->{articles} = $articles->iter;
         $c->stash->{pager} = $articles->pager;
