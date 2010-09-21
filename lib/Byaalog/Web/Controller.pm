@@ -8,6 +8,7 @@ sub import {
         'before_dispatch' => sub {
             my ( $class, $c ) = @_;
             $c->stash->{setting} = container('conf')->{setting};
+            $c->stash->{conf} = container('conf');
             my $template_path = $c->guess_filename;
             $template_path =~ s/\.html$//;
             my @class_tree = split '/', $template_path;
