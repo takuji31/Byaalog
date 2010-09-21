@@ -12,6 +12,10 @@ return +{
     },
     datasource => +{
     },
+    hostname => +{
+        default => 'http://blog.senchan.jp/',
+        admin => 'http://admin.blog.senchan.jp/',
+    },
     plugins => +{
     },
     setting => +{
