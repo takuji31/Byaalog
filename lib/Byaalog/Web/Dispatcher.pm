@@ -1,8 +1,8 @@
 package Byaalog::Web::Dispatcher;
-use Potch::Web::Dispatcher;
+use Potch::Web::Dispatcher::Simple;
 
 on '/' => run {
-    return 'Article', 'index', FALSE, +{};
+    return 'Article', 'index', false, +{};
 };
 
 1;
