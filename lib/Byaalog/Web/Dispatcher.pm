@@ -1,5 +1,5 @@
 package Byaalog::Web::Dispatcher;
-use Kamui::Web::Dispatcher;
+use Potch::Web::Dispatcher;
 
 on '/' => run {
     return 'Article', 'index', FALSE, +{};

@@ -1,4 +1,4 @@
-use Kamui;
+use Potch;
 
 return +{
     datasource => [

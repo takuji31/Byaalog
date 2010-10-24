@@ -1,5 +1,5 @@
 package Byaalog::Container;
-use Kamui::Container -base;
+use Potch::Container -base;
 use Senchan::Validator;
 
 register 'validator' => sub {

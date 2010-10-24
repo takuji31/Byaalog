@@ -1,5 +1,5 @@
 package Byaalog::Web::Controller::Admin::Root;
-use Kamui::Web::Controller -base;
+use Potch::Web::Controller -base;
 use Byaalog::Web::Controller;
 use Byaalog::Web::Controller::Admin;
 

@@ -1,5 +1,5 @@
 package Byaalog::Web::Dispatcher::Admin;
-use Kamui::Web::Dispatcher;
+use Potch::Web::Dispatcher;
 
 on '/' => run {
     return 'Admin::Root', 'index', FALSE, +{};

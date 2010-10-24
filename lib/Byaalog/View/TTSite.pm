@@ -1,6 +1,6 @@
 package Byaalog::View::TTSite;
-use Kamui;
-use base qw/Kamui::View::TT/;
+use Potch;
+use base qw/Potch::View::TT/;
 
 sub render {
     my $self          = shift;

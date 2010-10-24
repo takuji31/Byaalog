@@ -1,5 +1,5 @@
 package Byaalog::Web::Handler;
-use Kamui::Web::Handler;
+use Potch::Web::Handler;
 
 use_container 'Byaalog::Container';
 use_context 'Byaalog::Web::Context';

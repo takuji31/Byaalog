@@ -1,5 +1,5 @@
 package Byaalog::Web::Handler::Admin;
-use Kamui::Web::Handler;
+use Potch::Web::Handler;
 
 use_context 'Byaalog::Web::Context';
 use_dispatcher 'Byaalog::Web::Dispatcher::Admin';

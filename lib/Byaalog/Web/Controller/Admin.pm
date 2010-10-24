@@ -1,5 +1,5 @@
 package Byaalog::Web::Controller::Admin;
-use Kamui;
+use Potch;
 
 sub import {
     my $caller = caller;

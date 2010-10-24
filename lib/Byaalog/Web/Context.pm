@@ -1,4 +1,4 @@
 package Byaalog::Web::Context;
-use Kamui;
-use base 'Kamui::Web::Context';
+use Potch;
+use base 'Potch::Web::Context';
 1;

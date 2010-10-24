@@ -1,5 +1,5 @@
 package  Byaalog::Web::Controller::Article;
-use Kamui::Web::Controller -base;
+use Potch::Web::Controller -base;
 use Byaalog::Web::Controller;
 
 __PACKAGE__->add_trigger(
