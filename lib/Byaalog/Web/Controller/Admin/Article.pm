@@ -8,11 +8,17 @@ use Byaalog::Model;
 sub do_index {
     my ( $class, $c, $args ) = @_;
     my $page = $c->req->param('page') || 1;
-    my $articles
-        = model('Article')->search( {}, { page => $page, rows => 2 } );
+    my ( $articles, $pager ) = model('Article')->search_with_pager(
+        {},
+        {
+            page        => $page,
+            limit       => 2,
+            pager_logic => 'MySQLFoundRows',
+        }
+    );
     if ( defined $articles ) {
-        $c->stash->{articles} = $articles->iter;
-        $c->stash->{pager}    = $articles->pager;
+        $c->stash->{articles} = $articles;
+        $c->stash->{pager}    = $pager;
     }
 }
 
@@ -38,15 +44,13 @@ sub do_add {
 sub do_edit {
     my ( $class, $c, $args ) = @_;
     my $rid = $args->{rid} || '';
-    my $article = model('Article')->lookup_by_rid($rid);
+    my $article = model('Article')->single({rid => $rid});
     unless ($article) {
         $c->redirect('/article/');
         return;
     }
     $c->stash->{article} = $article;
 }
-
-
 
 sub do_dispatch {
     my ( $class, $c, $args ) = @_;

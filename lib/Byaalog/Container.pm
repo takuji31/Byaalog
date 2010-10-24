@@ -1,6 +1,7 @@
 package Byaalog::Container;
 use Potch::Container -base;
 use Senchan::Validator;
+use Byaalog::DB::Main;
 
 register 'validator' => sub {
     my $self = shift;
