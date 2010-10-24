@@ -13,4 +13,13 @@ register 'validator' => sub {
     );
 };
 
+register 'db' => sub {
+    my $self = shift;
+    Byaalog::DB::Main->new(
+        {
+            dsn => $self->get('conf')->{datasource}->[0],
+            connect_options => { AutoCommit => 1 },
+        }
+    );
+};
 1;

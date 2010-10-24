@@ -4,7 +4,9 @@ use warnings;
 use Cache::Memory;
 use Byaalog::DB::Main;
 use Byaalog::Container;
-use base 'DBIx::Skinny::Object';
+use DBIx::Skinny::ModelLoader setup => {
+    skinny => container('db'),
+};
 
 sub get_cache {
     my $self = shift;
