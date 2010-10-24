@@ -1,9 +1,9 @@
 package Byaalog::Web::Controller::Admin::Article;
-use Potch::Web::Controller -base;
-use Byaalog::Web::Controller;
-use Byaalog::Web::Controller::Admin;
+use Potch;
 use Byaalog::Container;
 use Byaalog::Model;
+
+use parent 'Byaalog::Web::Controller::Admin';
 
 sub do_index {
     my ( $class, $c, $args ) = @_;
